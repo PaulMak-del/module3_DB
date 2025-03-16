@@ -17,4 +17,9 @@ public class HandBindingBook extends Book {
     public void Read() {
         System.out.println("Read Hand Binding Book by " + author);
     }
+
+    @Override
+    public String toString() {
+        return "HandBindingBook | author: " + author + "; listAmount: " + listAmount + '\n';
+    }
 }

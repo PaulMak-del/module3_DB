@@ -29,6 +29,11 @@ public class DigitalBook extends Book {
     }
 
     @Override
+    public String toString() {
+        return "DigitalBook | url: " + url + "; author: " + author + "; listAmount: " + listAmount + '\n';
+    }
+
+    @Override
     public void Read() {
         System.out.println("Read book from " + url);
     }

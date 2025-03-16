@@ -1,20 +1,21 @@
-import Books.Book;
 import Books.DigitalBook;
 import Books.HandBindingBook;
 import Books.Magazine;
-import Library.Library;
+import FileService.FileService;
 
 public class Main {
     public static void main(String[] args) {
-        Library library = new Library();
-        Book b1 = new DigitalBook(10, "google.com");
-        Book b2 = new HandBindingBook(20, "Paul");
-        Book b3 = new Magazine(5, "NewYorkeTimes");
+        // Создание книг
+        DigitalBook digitalBook = new DigitalBook(150, "http://example.com", "John Doe");
+        HandBindingBook handBindingBook = new HandBindingBook(300, "Jane Smith");
+        Magazine magazine = new Magazine(50, "Times");
 
-        library.Add(b1);
-        library.Add(b2);
-        library.Add(b3);
+        FileService service = new FileService();
 
-        library.ShowAllBooks();
+        service.SaveBookToFile(digitalBook);
+        service.SaveBookToFile(handBindingBook);
+        service.SaveBookToFile(magazine);
+
+        System.out.println(service.GetBooksFromFile());
     }
 }

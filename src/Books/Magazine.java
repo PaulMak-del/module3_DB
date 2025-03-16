@@ -17,4 +17,9 @@ public class Magazine extends Book {
     public void Read() {
         System.out.println("Read " + publisher + " Magazine");
     }
+
+    @Override
+    public String toString() {
+        return "Magazine | publisher: " + publisher + "; listAmount: " + listAmount + '\n';
+    }
 }
